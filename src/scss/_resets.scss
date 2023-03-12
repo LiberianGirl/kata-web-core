@@ -1,0 +1,53 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-color: transparent transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  height: auto;
+  font-family: 'TT Lakes', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  @media (min-width: 1440px) {
+    margin: auto;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a {
+  color: #1b1c21;
+  text-decoration: none;
+}

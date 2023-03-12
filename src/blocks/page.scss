@@ -1,0 +1,28 @@
+.page {
+  @media (min-width: 1440px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__header {
+    background-color: white;
+
+    @media (min-width: 1440px) {
+      display: none;
+    }
+  }
+
+  &__side-menu {
+    @media (min-width: 1440px) {
+      border-left: 1px solid $border-slide-color;
+    }
+  }
+
+  &__content {
+    @media (min-width: 1440px) {
+      width: 1120px;
+      border-right: 1px solid $border-slide-color;
+    }
+  }
+}

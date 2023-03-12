@@ -1,0 +1,238 @@
+.modal {
+  &__overlay,
+  &__overlay--active {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 19;
+  }
+
+  &__overlay {
+    right: -120%;
+    transition-property: right;
+    transition-duration: 5s;
+
+    @media (min-width: 768px) {
+      background-color: transparent;
+      transition-property: background-color, right;
+      transition-duration: 100ms, 500ms;
+    }
+
+    &--active {
+      right: 0;
+      transition-property: right;
+      transition-duration: 100ms;
+
+      @media (min-width: 768px) {
+        background-color: rgba(255, 255, 255, 0.96);
+        transition-property: background-color, right;
+        transition-duration: 500ms, 100ms;
+      }
+    }
+  }
+
+  &__wrapper,
+  &__wrapper--open {
+    display: flex;
+    position: absolute;
+    width: 320px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-items: flex-start;
+    top: 0;
+    background-color: $background-color-white;
+    padding: 105px 16px 32px 16px;
+    box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
+      16px 0px 52px rgba(14, 24, 80, 0.2);
+    z-index: 20;
+
+    @media (min-width: 768px) {
+      position: fixed;
+      width: 440px;
+      border-left: 1px solid $border-color;
+      padding: 32px 32px 32px 32px;
+    }
+  }
+
+  &__wrapper {
+    right: -120%;
+    transition-property: right;
+    transition-duration: 1.2s;
+
+    &--open {
+      right: 0;
+      transition-property: right;
+      transition-duration: 1.2s;
+    }
+  }
+
+  &__button-left,
+  &__button-left--open {
+    width: 320px;
+    width: 100%;
+    position: absolute;
+    z-index: 25;
+    padding-left: 16px;
+    top: 24px;
+
+    @media (min-width: 768px) {
+      position: fixed;
+      width: 513px;
+      top: 32px;
+      padding-left: 0;
+    }
+  }
+
+  &__button-left {
+    right: -120%;
+    transition-property: right;
+    transition-duration: 1.2s;
+
+    @media (min-width: 768px) {
+      right: -120%;
+      transition-property: right;
+      transition-duration: 1.2s;
+    }
+
+    &::before {
+      @media (min-width: 768px) {
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 40px;
+        background-color: $divider-color;
+        border-radius: 2px;
+        left: 72px;
+      }
+    }
+
+    &--open {
+      right: 0;
+      transition-property: right;
+      transition-duration: 1.2s;
+
+      @media (min-width: 768px) {
+        right: 0;
+        transition-property: right;
+        transition-duration: 1.2s;
+      }
+
+      &::before {
+        @media (min-width: 768px) {
+          content: '';
+          position: absolute;
+          width: 3px;
+          height: 40px;
+          background-color: $divider-color;
+          border-radius: 2px;
+          left: 72px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    position: static;
+    height: 40px;
+    align-items: flex-end;
+    margin: 0 0 24px 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 40px;
+      background-color: $divider-color;
+      border-radius: 0 30% 30% 0;
+      left: 0;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__input {
+    width: 288px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid $border-slide-color;
+    padding: 0 16px 0 16px;
+
+    &::placeholder {
+      color: $pagination-color-active;
+    }
+
+    &:hover {
+      border: 2px solid $border-slide-color;
+      transition-property: outline;
+      transition-duration: 300ms;
+    }
+
+    &:focus {
+      border: 2px solid $focus-color;
+      outline: none;
+      transition-property: outline;
+      transition-duration: 300ms;
+    }
+
+    &:invalid {
+      color: $button-color;
+    }
+  }
+
+  &__message {
+    height: 118px;
+    padding-top: 12px;
+    resize: none;
+  }
+
+  &__agreement {
+    width: 288px;
+  }
+
+  &__agreement-link {
+    color: $button-color;
+
+    &:hover {
+      color: $text-grey;
+      transition-property: color;
+      transition-duration: 500ms;
+    }
+  }
+
+  &__button-right {
+    display: flex;
+    width: 288px;
+    justify-content: flex-end;
+  }
+
+  &__button-send {
+    display: flex;
+    width: 136px;
+    height: 32px;
+    align-items: center;
+    padding: 0 0 0 20px;
+    background-position: 110px;
+    margin: 0 0 16px 0;
+  }
+
+  &__input,
+  &__agreement,
+  &__button-right {
+    @media (min-width: 768px) {
+      width: 376px;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.footer {
+  border-top: 1px solid $border-color;
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px 0;
+    padding: 16px 16px 19px 16px;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      flex-wrap: nowrap;
+      flex-direction: row;
+      text-align: unset;
+      justify-content: space-between;
+      gap: 0 35px;
+      padding: 32px 24px 24px 24px;
+    }
+
+    @media (min-width: 1440px) {
+      padding: 32px 32px 21px 32px;
+    }
+  }
+
+  &__link {
+    color: $text-grey;
+    transition-property: color;
+    transition-duration: 500ms;
+
+    @media (min-width: 768px) {
+      min-width: 214px;
+      text-align: center;
+    }
+
+    &:hover {
+      color: $button-color;
+      transition-property: color;
+      transition-duration: 500ms;
+    }
+  }
+
+  &__info {
+    @media (min-width: 768px) {
+      min-width: 218px;
+    }
+  }
+
+  &__offer {
+    @media (min-width: 768px) {
+      min-width: 213px;
+      max-width: 330px;
+      text-align: right;
+    }
+  }
+}
