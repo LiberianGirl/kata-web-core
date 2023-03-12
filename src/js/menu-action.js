@@ -2,8 +2,6 @@ const mainMenu = document.querySelector('.main__menu')
 const menuLink = mainMenu.querySelectorAll('.menu__link')
 const menuLinklActive = 'menu__link--active'
 
-console.log(menuLink.length)
-
 for (let i = 0; i < menuLink.length; i++) {
   mainMenu.addEventListener(
     'click',
